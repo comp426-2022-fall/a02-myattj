@@ -47,7 +47,6 @@ else{
     long = -parseInt(argv[3]).toFixed(2);
 }
 
-console.log(lat)
 
 
 // Make a request
@@ -55,8 +54,12 @@ const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude='+
 
 // Get the data from the request
 const data = await response.json();
+var days = 1
 
-const days = argv.d   
+
+if(argv[6] == '-d'){
+    days = argv[7]
+}
 
 
 if (days == 0) {
