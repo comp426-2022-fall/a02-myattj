@@ -7,8 +7,8 @@ const timezone = moment.tz.guess();
 
 const argv = process.argv.slice(2);
 
-var lat = 35
-var long = 79
+var lat = null
+var long = null
 
 if(argv[0] == '-h'){
     console.log("Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE")
@@ -23,12 +23,12 @@ if(argv[0] == '-h'){
 
 if(argv[0] == '-j'){
     // Make a request
-    const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude='+ lat +'&longitude='+ long +'&daily=precipitation_hours&timezone='+timezone);
+    //const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude='+ lat +'&longitude='+ long +'&daily=precipitation_hours&timezone='+timezone);
 
     // Get the data from the request
-    const data = await response.json();
+    //const data = await response.json();
 
-    console.log(data)
+    console.log("Latitude must be in range")
     process.exit(0)
 }
 
